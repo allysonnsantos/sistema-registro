@@ -3,70 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Educacenso 2025</title>
+    <title>Educacenso 2025 - Sistema de Gestão Educacional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>Educacenso 2025</h2>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p>Carregando sistema educacional...</p>
+        </div>
+    </div>
+
     <header>
         <div class="container header-content">
             <div class="logo">
-                <h1>Educacenso 2025</h1>
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <h1>Educacenso 2025</h1>
+                    <span class="logo-subtitle">Sistema de Gestão Educacional</span>
+                </div>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Início</a></li>
-                    <li><a href="#">Cadastros</a></li>
-                    <li><a href="#">Relatórios</a></li>
-                    <li><a href="#">Configurações</a></li>
-                    <li><a href="#">Ajuda</a></li>
-                </ul>
-            </nav>
+            
+            <div class="header-actions">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name">Administrador</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <button class="btn-notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <div class="container">
-        <div class="main-content">
-            <aside class="sidebar">
-                <h3>Menu de Cadastros</h3>
+    <div class="container main-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#" class="active" data-target="alunos">Alunos</a></li>
-                    <li><a href="#" data-target="professores">Professores</a></li>
-                    <li><a href="#" data-target="gestores">Gestores</a></li>
-                    <li><a href="#" data-target="escolas">Escolas</a></li>
-                    <li><a href="#" data-target="tecnicos">Técnicos</a></li>
+                    <li>
+                        <a href="#" class="nav-item active">
+                            <i class="fas fa-home"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-users"></i>
+                            <span>Cadastros</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Configurações</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Ajuda</span>
+                        </a>
+                    </li>
                 </ul>
-            </aside>
+            </nav>
 
-            <main class="content">
-                <div class="content-header">
-                    <h2 id="content-title">Cadastro de Alunos</h2>
-                    <button class="btn" id="btn-add">Adicionar Novo</button>
+            <div class="sidebar-section">
+                <h3><i class="fas fa-list-alt"></i> Menu de Cadastros</h3>
+                <ul class="cadastro-menu">
+                    <li>
+                        <a href="#" class="cadastro-item active" data-target="alunos">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Alunos</span>
+                            <span class="item-badge" id="badge-alunos">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="cadastro-item" data-target="professores">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>Professores</span>
+                            <span class="item-badge" id="badge-professores">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="cadastro-item" data-target="gestores">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Gestores</span>
+                            <span class="item-badge" id="badge-gestores">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="cadastro-item" data-target="escolas">
+                            <i class="fas fa-school"></i>
+                            <span>Escolas</span>
+                            <span class="item-badge" id="badge-escolas">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="cadastro-item" data-target="tecnicos">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Técnicos</span>
+                            <span class="item-badge" id="badge-tecnicos">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="system-info">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Sistema Seguro</span>
                 </div>
+                <div class="version">v2.0.1</div>
+            </div>
+        </aside>
 
-                <div class="stats">
-                    <div class="stat-card">
+        <main class="content">
+            <div class="content-header">
+                <div class="header-title">
+                    <h2 id="content-title">
+                        <i class="fas fa-user-graduate"></i>
+                        Cadastro de Alunos
+                    </h2>
+                    <p id="content-subtitle">Gerencie os dados dos alunos do sistema educacional</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" id="btn-export">
+                        <i class="fas fa-download"></i>
+                        Exportar
+                    </button>
+                    <button class="btn btn-primary" id="btn-add">
+                        <i class="fas fa-plus"></i>
+                        Adicionar Novo
+                    </button>
+                </div>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="stat-card primary">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="stat-info">
                         <h3 id="count-alunos">0</h3>
                         <p>Alunos Cadastrados</p>
                     </div>
-                    <div class="stat-card">
-                        <h3 id="count-professores">0</h3>
-                        <p>Professores Cadastrados</p>
+                    <div class="stat-trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        12%
                     </div>
-                    <div class="stat-card">
+                </div>
+                
+                <div class="stat-card success">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="count-professores">0</h3>
+                        <p>Professores Ativos</p>
+                    </div>
+                    <div class="stat-trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        5%
+                    </div>
+                </div>
+                
+                <div class="stat-card warning">
+                    <div class="stat-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="stat-info">
                         <h3 id="count-escolas">0</h3>
                         <p>Escolas Cadastradas</p>
                     </div>
+                    <div class="stat-trend down">
+                        <i class="fas fa-arrow-down"></i>
+                        2%
+                    </div>
+                </div>
+                
+                <div class="stat-card info">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>98%</h3>
+                        <p>Taxa de Preenchimento</p>
+                    </div>
+                    <div class="stat-trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        3%
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <h3><i class="fas fa-table"></i> Lista de Registros</h3>
+                    <div class="card-actions">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="search-input" placeholder="Pesquisar...">
+                        </div>
+                        <button class="btn btn-outline" id="btn-filter">
+                            <i class="fas fa-filter"></i>
+                            Filtrar
+                        </button>
+                    </div>
                 </div>
 
-                <div id="table-container">
+                <div class="table-responsive">
                     <table id="data-table">
                         <thead>
                             <tr>
+                                <th>
+                                    <input type="checkbox" id="select-all">
+                                </th>
                                 <th>ID</th>
                                 <th>Nome</th>
                                 <th>Data de Nascimento</th>
                                 <th>CPF</th>
                                 <th>Escola</th>
+                                <th>Status</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -75,73 +251,148 @@
                         </tbody>
                     </table>
                 </div>
-            </main>
-        </div>
+
+                <div class="table-footer">
+                    <div class="table-info">
+                        Mostrando <span id="showing-count">0</span> de <span id="total-count">0</span> registros
+                    </div>
+                    <div class="pagination">
+                        <button class="btn-pagination" id="btn-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="pagination-info">Página 1 de 1</span>
+                        <button class="btn-pagination" id="btn-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
     <!-- Modal para adicionar/editar registros -->
     <div class="modal" id="form-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="modal-title">Adicionar Aluno</h3>
+                <h3 id="modal-title">
+                    <i class="fas fa-user-plus"></i>
+                    Adicionar Aluno
+                </h3>
                 <span class="close">&times;</span>
             </div>
             <form id="data-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" class="form-control" required>
+                <div class="form-section">
+                    <h4><i class="fas fa-id-card"></i> Dados Pessoais</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">
+                                <i class="fas fa-user"></i>
+                                Nome Completo *
+                            </label>
+                            <input type="text" id="nome" class="form-control" required placeholder="Digite o nome completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="data_nascimento">
+                                <i class="fas fa-calendar"></i>
+                                Data de Nascimento *
+                            </label>
+                            <input type="date" id="data_nascimento" class="form-control" required>
+                        </div>
                     </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cpf">
+                                <i class="fas fa-id-card"></i>
+                                CPF *
+                            </label>
+                            <input type="text" id="cpf" class="form-control" required placeholder="000.000.000-00" data-mask="cpf">
+                        </div>
+                        <div class="form-group">
+                            <label for="rg">
+                                <i class="fas fa-address-card"></i>
+                                RG
+                            </label>
+                            <input type="text" id="rg" class="form-control" placeholder="Digite o RG">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h4><i class="fas fa-address-book"></i> Contato</h4>
                     <div class="form-group">
-                        <label for="data_nascimento">Data de Nascimento</label>
-                        <input type="date" id="data_nascimento" class="form-control" required>
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            E-mail
+                        </label>
+                        <input type="email" id="email" class="form-control" placeholder="exemplo@email.com">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefone">
+                                <i class="fas fa-phone"></i>
+                                Telefone
+                            </label>
+                            <input type="text" id="telefone" class="form-control" placeholder="(00) 00000-0000" data-mask="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="escola">
+                                <i class="fas fa-school"></i>
+                                Escola *
+                            </label>
+                            <select id="escola" class="form-control" required>
+                                <option value="">Selecione uma escola</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="cpf">CPF</label>
-                        <input type="text" id="cpf" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="rg">RG</label>
-                        <input type="text" id="rg" class="form-control">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" class="form-control">
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" id="telefone" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="escola">Escola</label>
-                        <select id="escola" class="form-control">
-                            <option value="">Selecione uma escola</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group" id="additional-fields">
+                <div class="form-section" id="additional-fields">
                     <!-- Campos adicionais específicos para cada tipo de cadastro -->
                 </div>
                 
-                <div class="form-group">
-                    <button type="submit" class="btn">Salvar</button>
-                    <button type="button" class="btn btn-danger" id="btn-cancel">Cancelar</button>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" id="btn-cancel">
+                        <i class="fas fa-times"></i>
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Salvar Registro
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
     <footer>
         <div class="container">
-            <p>Sistema Educacenso 2025 - Desenvolvido para fins educacionais</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Educacenso 2025</h4>
+                    <p>Sistema de Gestão Educacional desenvolvido para otimizar o censo escolar.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-envelope"></i> suporte@educacenso.com</p>
+                    <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Desenvolvido com</h4>
+                    <div class="tech-stack">
+                        <span class="tech-item">HTML5</span>
+                        <span class="tech-item">CSS3</span>
+                        <span class="tech-item">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Educacenso 2025. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
